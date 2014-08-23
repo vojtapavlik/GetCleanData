@@ -9,5 +9,7 @@ Originally, the data collected by smart phones on 30 volunteers performing 6 dif
 The files in the repo GetCleanData:
 
 README.md
+
 run_analysis.R - the script to perform required changes, requires the R working directory to be set to "UCI HAR Dataset" folder 
+
 CodeBook.md - describes the variables, the data and the transformations leading to clean data set
