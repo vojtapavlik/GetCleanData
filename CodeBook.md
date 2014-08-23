@@ -35,15 +35,7 @@ std(): Standard deviation
 
 
 Activity variable described the activity assigned from the subject video records.
+  There were six activities: LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS
+  
 Subject denotes volunteer performing the particular activity.
-
-
-The data and transformations made to create the clean data set part 1
-=====================================================================
-The data transformation script begins with reading in the test and training sets, associated activites, subjects and the activity descriptive name codebook. 
-Neither training nor test set did contain NA values. The subject and activity data columns were attached to the test and training sets. Afterwards, the both data sets were merged. Feature names were changed to descriptive names and the Activity column was recoded from numeric values to descriptive names. Finally, only the mean and the standard deviation columns for each variable were kept in the merged dataset. 
-The resulting dataset contains 10 299 data entries on 66 variables and associated subject numeric code and activity description.
-
-The data and transformations made to create the clean data set part 2
-=====================================================================
-The averaged dataset was created from the previosly described merged dataset before reduction of the features. The unique activities and subject numeric codes were used to select a subset of values for the specified activity and subject. This subset was then averaged for each feature and stored in the new dataset. This was done for all combinations of subject and activity pairs.
+  The possible values are 1 to 30 as there were 30 measured subjects.
