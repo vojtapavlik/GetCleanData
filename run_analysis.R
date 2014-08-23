@@ -14,7 +14,7 @@ trainL <- read.table("y_train.txt")
 trainS <- read.table("subject_train.txt")
 setwd(parent)
 
-#reading in the activity labels
+#reading in the activity and feature labels
 activityL <- read.table("activity_labels.txt")
 features <- read.table("features.txt")
 setwd(parent)
@@ -41,10 +41,13 @@ write.table(merged2, "dataMerged.txt", sep = "\t", row.name = FALSE)
 
 ############# AVERAGED DATASET ###################
 
+#finding uniqe values for activities and subjects
 uniqueA <- levels(merged$Activity)
 uniqueS <- unique(merged$Subject)
 
 averaged <- NULL
+
+#creation of the data set with averaged values
 for (i in uniqueA) {
   for (j in uniqueS) {
     selectedRows <- merged[,"Activity"] == i & merged[,"Subject"] == j
@@ -55,6 +58,7 @@ for (i in uniqueA) {
   }
 }
 
+#transformations of the dataset before saving
 averaged <- as.data.frame(averaged)
 averaged[,2] <- as.integer(as.character(averaged[,2]))
 averaged[,3:563] <- apply(averaged[,3:563], 2, as.numeric)
